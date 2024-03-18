@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.samarkan{
+  font-family: 'Samarkan', sans-serif;
+}

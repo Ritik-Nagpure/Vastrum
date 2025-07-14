@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import logo from "../../../public/extras/vastrum-logo.png";
 
 function Header() {
   return (

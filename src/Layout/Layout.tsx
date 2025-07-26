@@ -5,6 +5,9 @@ import App from "./App/App";
 import About from "../Pages/About/About";
 import NotFound from "./NotFound";
 
+import PrivacyPolicy from '../Legality/PrivacyPolicy'
+import TermsOfUse from '../Legality/TermsOfUse'
+
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 
@@ -35,6 +38,9 @@ function Layout() {
                 <Route path="/Vastrum/" element={<App />}></Route>
                 <Route path="/Vastrum/about" element={<About />}></Route>
 
+                <Route path="/Vastrum/privacy-policy" element={<PrivacyPolicy />}></Route>
+                <Route path="/Vastrum/terms-of-use" element={<TermsOfUse />}></Route>
+
                 <Route path="/Vastrum/*" element={<NotFound />}></Route>
               </Routes>
             </div>
@@ -47,9 +53,6 @@ function Layout() {
           <div className="">
             <Footer />
           </div>
-          {
-            isDark.toString()
-          }
         </BrowserRouter>
       </div>
     )

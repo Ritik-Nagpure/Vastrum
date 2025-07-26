@@ -1,8 +1,19 @@
 
 function Sidebar() {
   return (
-    <div>
-      Sidebar
+    <div className="">
+      <div className="bg-yellow-500 w-60">
+        <p>Overlay Panel Content</p>
+        <p>Overlay Panel Content</p>
+        <p>Overlay Panel Content</p>
+        <p>Overlay Panel Content</p>
+        <p>Overlay Panel Content</p>
+        <p>Overlay Panel Content</p>
+        <p>Overlay Panel Content</p>
+        <p>Overlay Panel Content</p>
+        <p>Overlay Panel Content</p>
+        <p>Overlay Panel Content</p>
+      </div>
     </div>
   )
 }

@@ -23,11 +23,11 @@ function Layout() {
 
   const mainDisplayLayout = () => {
     return (
-      <div className="flex flex-col justify-between min-h-screen w-screen object-contain ">
+      <div className="flex flex-col justify-between w-screen object-contain ">
         <Header isDark={isDark} toggleMode={toggleDisplayMode} isSidebar={showSidebar} toggleSidebar={toggleSidebar} />
-        <div className="flex flex-row justify-center items-center w-full h-full bg-amber-300">
+        <div className="flex flex-roww-full h-full bg-amber-300">
 
-          <div className="flex flex-col justify-between object-contain bg-amber-600 h-full w-full" >
+          <div className="flex flex-col justify-between object-contain bg-amber-600 h-full w-full z-0" >
             <Router>
               <Routes>
                 <Route path="/" element={<App />}></Route>
@@ -36,16 +36,18 @@ function Layout() {
                 <Route path="/*" element={<NotFound />}></Route>
               </Routes>
             </Router>
+
+            <NotFound />
+            {/* <NotFound />
+            <NotFound />
+            <NotFound /> */}
           </div>
 
-          <div className="bg-green-400 h-full">
+          <div className="absolute -1 shadow-2xl right-0 bg-green-400 h-full">
             {showSidebar ? <Sidebar /> : ''}
           </div>
         </div>
-        <NotFound />
-        <NotFound />
-        <NotFound />
-        <NotFound />
+
         <Footer />
       </div>
     )

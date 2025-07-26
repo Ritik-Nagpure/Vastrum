@@ -1,18 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faSun, faMoon, faShoppingCart, faBars, faClose } from '@fortawesome/free-solid-svg-icons';
-
+import { faShoppingCart, faBars, faClose } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 type headerProps = {
-  isDark: Boolean;
-  toggleMode: () => void;
   isSidebar: Boolean;
   toggleSidebar: () => void;
 }
 
-function Header({ isDark, toggleMode, isSidebar, toggleSidebar }: headerProps) {
+const Header = ({ isSidebar, toggleSidebar }: headerProps) => {
+  const nav = useNavigate()
+  const load_app = (applink: string) => {
+    nav(applink)
+  }
+
   return (
     <div className="bg-gray-800 text-white p-4 flex justify-between items-center">
-      <div className="text-5xl">
+      <div className="text-5xl" onClick={() => { load_app('/Vastrum/') }}>
         Vastrum
       </div>
 
@@ -21,13 +24,8 @@ function Header({ isDark, toggleMode, isSidebar, toggleSidebar }: headerProps) {
       </div>
 
       <div className="hidden sm:flex sm:flex-row">
-        <button className='m-1 p-2 text-2xl hover:bg-indigo-900' onClick={() => { toggleMode() }}>
-          {isDark ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
-        </button>
-        <p className='m-1 p-2 text-2xl  hover:bg-indigo-900'>
-          <FontAwesomeIcon icon={faBell} />
 
-        </p>
+
         <p className='m-1 p-2 text-2xl  hover:bg-indigo-900'>
           <FontAwesomeIcon icon={faShoppingCart} />
         </p>

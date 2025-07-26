@@ -1,11 +1,11 @@
 import Header from "./Header/Header";
-import Footer from "./Footer/footer";
+import Footer from "./Footer/Footer";
 import Sidebar from "./Sidebar/Sidebar";
 import App from "./App/App";
 import About from "../Pages/About/About";
 import NotFound from "./NotFound";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 
 function Layout() {
@@ -23,39 +23,41 @@ function Layout() {
 
   const mainDisplayLayout = () => {
     return (
-      <div className="flex flex-col justify-between w-screen object-contain ">
-        <Header isDark={isDark} toggleMode={toggleDisplayMode} isSidebar={showSidebar} toggleSidebar={toggleSidebar} />
-        <div className="flex flex-roww-full h-full bg-amber-300">
+      <div className={"flex flex-col justify-between w-screen object-contain " + (isDark ? "dark-mode" : "light-mode")}>
+        <BrowserRouter>
+          <div className="h-1/12">
+            <Header isSidebar={showSidebar} toggleSidebar={toggleSidebar} />
+          </div>
 
-          <div className="flex flex-col justify-between object-contain bg-amber-600 h-full w-full z-0" >
-            <Router>
+          <div className="flex flex-roww-full">
+            <div className="flex flex-col justify-between object-contain h-full w-full z-0" >
               <Routes>
-                <Route path="/" element={<App />}></Route>
-                <Route path="/about" element={<About />}></Route>
+                <Route path="/Vastrum/" element={<App />}></Route>
+                <Route path="/Vastrum/about" element={<About />}></Route>
 
-                <Route path="/*" element={<NotFound />}></Route>
+                <Route path="/Vastrum/*" element={<NotFound />}></Route>
               </Routes>
-            </Router>
+            </div>
 
-            <NotFound />
-            {/* <NotFound />
-            <NotFound />
-            <NotFound /> */}
+            <div className="absolute right-0">
+              {showSidebar ? <Sidebar isDark={isDark} toggleMode={toggleDisplayMode} /> : ''}
+            </div>
           </div>
 
-          <div className="absolute -1 shadow-2xl right-0 bg-green-400 h-full">
-            {showSidebar ? <Sidebar /> : ''}
+          <div className="">
+            <Footer />
           </div>
-        </div>
-
-        <Footer />
+          {
+            isDark.toString()
+          }
+        </BrowserRouter>
       </div>
     )
   }
 
 
   return (
-    <div className="min-h-100%">
+    <div className="min-w-screen min-h-screen">
       {false ? <NotFound /> : mainDisplayLayout()}
     </div>
   );

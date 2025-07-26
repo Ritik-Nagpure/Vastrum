@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
-.samarkan{
+.samarkan {
   font-family: 'Samarkan', sans-serif;
+}
+
+
+
+.html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.light-mode {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.dark-mode {
+  background-color: #300264;
+  color: #f6f6f6;
 }

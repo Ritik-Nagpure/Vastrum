@@ -1,8 +1,8 @@
 
-function Sidebar(){
-  return(
+function Sidebar() {
+  return (
     <div>
-    Sidebar
+      Sidebar
     </div>
   )
 }

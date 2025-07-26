@@ -1,5 +1,5 @@
 
-function footer() {
+function Footer() {
   return (
     <div>
         this is footer 
@@ -7,4 +7,4 @@ function footer() {
   )
 }
 
-export default footer
+export default Footer

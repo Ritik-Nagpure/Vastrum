@@ -10,6 +10,7 @@ import TermsOfUse from '../Legality/TermsOfUse'
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
+import Notifications from "./Notifications/Notification";
 
 function Layout() {
   const [isDark, setIsDark] = useState(true);
@@ -18,18 +19,31 @@ function Layout() {
     setIsDark(!isDark);
   }
 
-  const [showSidebar, setShowSidebr] = useState(false)
+  const [showSidebar, setShowSidebar] = useState(false)
 
   const toggleSidebar = () => {
-    setShowSidebr(!showSidebar);
+    setShowSidebar(!showSidebar);
+  }
+
+  const [showNotification, setShowNotification] = useState(false)
+
+  const toggleShowNotification = () => {
+    setShowNotification(!showNotification);
   }
 
   const mainDisplayLayout = () => {
     return (
-      <div className={"flex flex-col justify-between w-screen object-contain " + (isDark ? "dark-mode" : "light-mode")}>
+      <div className={"flex flex-col justify-between w-full object-contain " + (isDark ? "dark-mode" : "light-mode")}>
         <BrowserRouter>
-          <div className="h-1/12">
-            <Header isSidebar={showSidebar} toggleSidebar={toggleSidebar} />
+          <div className="sticky top-0 z-50 shadow h-1/12 object-contain">
+            <Header isSidebar={showSidebar} toggleSidebar={toggleSidebar} toggleNotifications={toggleShowNotification} />
+            <div className="absolute right-0" >
+              {showNotification ? <Notifications /> : ''}
+            </div>
+            <div className="absolute right-0">
+              {showSidebar ? <Sidebar isDark={isDark} toggleMode={toggleDisplayMode} /> : ''}
+            </div>
+
           </div>
 
           <div className="flex flex-roww-full">
@@ -44,10 +58,6 @@ function Layout() {
                 <Route path="/Vastrum/*" element={<NotFound />}></Route>
               </Routes>
             </div>
-
-            <div className="absolute right-0">
-              {showSidebar ? <Sidebar isDark={isDark} toggleMode={toggleDisplayMode} /> : ''}
-            </div>
           </div>
 
           <div className="">
@@ -60,7 +70,7 @@ function Layout() {
 
 
   return (
-    <div className="min-w-screen min-h-screen">
+    <div className="">
       {false ? <NotFound /> : mainDisplayLayout()}
     </div>
   );

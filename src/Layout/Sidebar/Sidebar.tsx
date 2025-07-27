@@ -10,7 +10,7 @@ type sidebarProps = {
 
 const Sidebar = ({ isDark, toggleMode }: sidebarProps) => {
   return (
-    <div className="border-4 border-gray-400 bg-gray-300 rounded-xl w-64 p-4 m-2 shadow-2xl">
+    <div className="sticky border-4 border-gray-400 bg-gray-300 rounded-xl w-64 p-4 m-2 shadow-2xl">
 
       <button className='m-1 p-2 text-2xl hover:bg-indigo-900' onClick={() => { toggleMode() }}>
         {isDark ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}

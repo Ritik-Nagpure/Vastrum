@@ -1,13 +1,8 @@
 @import "tailwindcss";
 
-.samarkan {
-  font-family: 'Samarkan', sans-serif;
-}
-
-
-
 .html,
 body {
+  width: screen;
   margin: 0px;
   padding: 0px;
 }

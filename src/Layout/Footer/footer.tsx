@@ -21,11 +21,11 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="text-white font-semibold mb-3">Emporium</h4>
           <ul className="space-y-2">
-            <li><button className="hover:text-white">New Arrivals</button></li>
-            <li><button className="hover:text-white">Men</button></li>
-            <li><button className="hover:text-white">Women</button></li>
-            <li><button className="hover:text-white">Accessories</button></li>
-            <li><button className="hover:text-white">Sale</button></li >
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">New Arrivals</button></li>
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">Men</button></li>
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">Women</button></li>
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">Accessories</button></li>
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">Sale</button></li >
           </ul >
         </div >
 
@@ -33,27 +33,27 @@ const Footer: React.FC = () => {
         < div >
           <h4 className="text-white font-semibold mb-3">Want to know more ? </h4>
           <ul className="space-y-2">
-            <li><button className="hover:text-white">About Us</button></li>
-            <li><button className="hover:text-white">Careers</button></li >
-            <li><button className="hover:text-white">Sustainability</button></li >
-            <li><button className="hover:text-white">Blog</button></li >
-            <li><button className="hover:text-white">Contact</button></li >
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">About Us</button></li>
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">Careers</button></li >
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">Sustainability</button></li >
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">Blog</button></li >
+            <li><button className="hover:text-white hover:border-b-2 hover:border-orange-500">Contact</button></li >
           </ul >
         </div >
 
         {/* Newsletter & Social */}
         < div >
-          <h4 className="text-white font-semibold mb-3">Stay in Touch</h4>
+          <p className="text-xl text-white font-semibold mb-3">Get exclusive offers & updates</p>
           <form className="flex flex-col space-y-3">
             <input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400"
+              className="px-4 py-2 rounded-2xl bg-gray-800 text-white placeholder-gray-400"
               required
             />
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-2xl"
             >
               Subscribe
             </button>
@@ -108,10 +108,10 @@ const Footer: React.FC = () => {
       < div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm" >
         <p>&copy; 2025 Vastrum. All rights reserved.</p>
         <p className="mt-1">
-          <button onClick={() => { load_link("/Vastrum/privacy-policy") }} className="hover:underline hover:text-white">
+          <button onClick={() => { load_link("/Vastrum/privacy-policy") }} className="hover:text-white hover:border-b-2 hover:border-orange-500">
             Privacy Policy
           </button> |
-          <button onClick={() => { load_link("/Vastrum/terms-of-use") }} className="ml-2 hover:underline hover:text-white">
+          <button onClick={() => { load_link("/Vastrum/terms-of-use") }} className="ml-2 hover:text-white hover:border-b-2 hover:border-orange-500">
             Terms of Service
           </button>
         </p>
